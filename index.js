@@ -11,11 +11,7 @@ const options = {
 // header, nowPlaying, search, popularMovie
 const nowPlayingContainer = document.querySelector(".nowPlayingContainer");
 const nowPlayingCard = document.querySelector(".nowPlayingCard");
-const popularContainer = document.querySelector(".popularContainer");
-const popularCard = document.querySelector(".popularCard");
+const movieContainer = document.querySelector(".movieContainer");
+const movieCard = document.querySelector(".movieCard");
 const searchBtn = document.querySelector(".searchBtn");
 const searchInput = document.querySelector(".searchMovie");
-
-searchBtn.addEventListener("click", function () {
-  console.log("searchInput => ", searchInput.value);
-});
