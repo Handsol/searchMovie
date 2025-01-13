@@ -1,0 +1,48 @@
+body {
+    padding : 0;
+    margin : 0;
+}
+/* 검색 목록 */
+.search {
+    display : flex;
+    justify-content: center;
+    height: 30px;
+}
+/* 검색 목록 */
+
+/* 유명한 영화 목록 */
+.popularContainer {
+    padding: 20px;
+    width: auto;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap : 20px;
+}
+
+.popularCard {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.popularPoster {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.popularMovieInfo {
+    padding: 15px;
+}
+
+.popularTitle {
+    font-size: 30px;
+    margin: 0;
+    font-weight: 100;
+  }
+/* 유명한 영화 목록 */

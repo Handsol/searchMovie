@@ -1,4 +1,5 @@
 // Now Playing API
+
 fetch(
   "https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1",
   options
@@ -10,42 +11,57 @@ fetch(
 // -----------------------------------------------------------------------
 
 // Popular API
+
 fetch(
   "https://api.themoviedb.org/3/movie/popular?language=ko-KR&page=1",
   options
 )
   .then((res) => res.json())
   .then((data) => {
-    data.results.forEach((popularMovie) => {
-      const { poster_path, title } = popularMovie;
+    for (let i = 0; i < data.results.length; i++) {
+      const { poster_path, title } = data.results[i];
 
-      // 템플릿 카드 복사
-      const card = popularCard.cloneNode(true);
-      card.classList.remove("template");
+      // 새로운 카드 요소 생성
+      const card = document.createElement("div");
+      card.classList.add("popularCard");
 
-      // 데이터 삽입
-      card.querySelector(
-        ".popularPoster"
-      ).src = `https://image.tmdb.org/t/p/w500${poster_path}`;
-      card.querySelector(".popularPoster").alt = `${title} 유명포스터`;
-      card.querySelector(".popularTitle").textContent = title;
+      // 포스터 이미지 생성
+      const img = document.createElement("img");
+      img.classList.add("popularPoster");
+      img.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
+      img.alt = `${title} 유명포스터`;
 
-      // 카드 추가
+      // 제목 생성
+      const titleElement = document.createElement("p");
+      titleElement.classList.add("popularTitle");
+      titleElement.textContent = title;
+
+      // 카드에 추가
+      card.appendChild(img);
+      card.appendChild(titleElement);
+
+      // 컨테이너에 추가
       popularContainer.appendChild(card);
-    });
-
-    // 템플릿 카드 제거 (루프 이후)
-    popularCard.remove();
+    }
   })
   .catch((err) => console.error(err));
 
 // -----------------------------------------------------------------------
 
 // Search API
-fetch(
-  "https://api.themoviedb.org/3/search/movie?include_adult=false&language=ko-KR&page=1",
-  options
-)
-  .then((resSearch) => resSearch.json())
-  .then((resSearch) => console.log(resSearch))
-  .catch((errSea) => console.error(errSea));
+
+// 검색 관련은 인풋.value에 대한 필터링이 필요하기 때문에
+// Data를 받아오는 명령과 뿌리는 명령 구분 필요
+
+function searchData() {
+  fetch(
+    "https://api.themoviedb.org/3/search/movie?include_adult=false&language=ko-KR&page=1",
+    options
+  )
+    .then((resSearch) => resSearch.json())
+    .then((resSearch) => console.log(resSearch))
+    .catch((errSea) => console.error(errSea));
+}
+
+function displayPosts() {}
+searchData();
