@@ -139,10 +139,15 @@ function updateModal(movie) {
 
   // 가져온 내용을 HTML로 전송하여 모달 생성
   const modal = document.querySelector(".modal");
+
+  modalBody.style.backgroundImage = `url(https://image.tmdb.org/t/p/w1280${backdrop_path})`;
+  modalBody.style.backgroundSize = "cover";
+  modalBody.style.backgroundPosition = "center";
+  modalBody.style.backgroundRepeat = "no-repeat";
+
   modal.querySelector(".movieInformation").innerHTML = `
     <h2>${title}</h2>
     <p><strong>원제 : </strong> ${original_title} (${original_language})</p>
-    <img src="https://image.tmdb.org/t/p/w500${backdrop_path}" alt="${title} 배경">
     <p><strong>개봉일 : </strong> ${release_date}</p>
     <p><strong>평점 : </strong> ⭐ ${vote_average} (${vote_count}명)</p>
     <p><strong>줄거리 : </strong> ${overview}</p>

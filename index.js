@@ -16,6 +16,7 @@ const movieCard = document.querySelector(".movieCard");
 const searchBtn = document.querySelector(".searchBtn");
 const searchInput = document.querySelector(".searchMovie");
 const modal = document.querySelector(".modal");
+const modalBody = document.querySelector(".modalBody");
 const movieInformation = document.querySelector(".movieInformation");
 const openModal = document.querySelector(".openModal");
 const closeModal = document.querySelector(".closeModal");
