@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Plus</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>여기가 헤더</h1>
+      <!-- 헤더 (타이틀, 로그인) -->
+    </header>
+
+    <ul class="nowPlaying">
+      <div class="nowPlayingContainer">
+        <div class="nowPlayingCard">
+          <img src="" alt="상영포스터" class="nowPlayingPoster" />
+          <!-- 현재 상영 중인 영화 애니메이션 -->
+        </div>
+      </div>
+    </ul>
+
+    <div class="search">
+      <input class="searchMovie" type="searchMovie" pattern=".*\S.*" required />
+      <button class="searchBtn" type="submit">Search</button>
+      <!-- 북마크 -->
+    </div>
+
+    <main class="movie">
+      <div class="movieContainer">
+        <!-- 기본 영화(유명한 영화), 검색 영화 목록 -->
+      </div>
+    </main>
+
+    <div class="modal">
+      <div class="modalBody">
+        <button class="closeModal">닫기</button>
+        <div class="movieInformation">
+          <!-- 포스터를 누르면 영화 관련 상세 내용 모달 -->
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script src="api.js"></script>
+  </body>
+</html>
