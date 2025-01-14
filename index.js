@@ -16,13 +16,13 @@ const movieCard = document.querySelector(".movieCard");
 const searchBtn = document.querySelector(".searchBtn");
 const searchInput = document.querySelector(".searchMovie");
 const modal = document.querySelector(".modal");
+const movieInformation = document.querySelector(".movieInformation");
 const openModal = document.querySelector(".openModal");
 const closeModal = document.querySelector(".closeModal");
 
-openModal.addEventListener("click", () => {
-  modal.style.display = "flex";
-});
-
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
+// 검색창에서 검색어 입력 후 엔터키를 누르면 인식하게 설정
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    searchBtn.click();
+  }
 });
