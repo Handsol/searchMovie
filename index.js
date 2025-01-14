@@ -15,3 +15,14 @@ const movieContainer = document.querySelector(".movieContainer");
 const movieCard = document.querySelector(".movieCard");
 const searchBtn = document.querySelector(".searchBtn");
 const searchInput = document.querySelector(".searchMovie");
+const modal = document.querySelector(".modal");
+const openModal = document.querySelector(".openModal");
+const closeModal = document.querySelector(".closeModal");
+
+openModal.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
