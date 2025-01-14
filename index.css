@@ -13,6 +13,26 @@ body {
         transform: translate(-50%, -50%) scale(1); /* 중앙 고정 + 원래 크기 */
     }
 }
+/* header */
+.header {
+    background-color: black;
+}
+/* header */
+
+/* 상영작 */
+.nowPlaying {
+    height: 400px;
+}
+
+.nowPlayingContainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.nowPlayingCard {
+    height: 300px;
+}
+/* 상영작 */
 
 /* 검색 목록 */
 .search {
@@ -48,14 +68,13 @@ body {
     transform: translate(-50%, -50%); /* 기본 위치 */
     animation: fadeIn 400ms ease-in-out; /* 애니메이션을 시작과 끝은 느리고 중간은 빠르게 진행 */
     border-radius: 10px;
-    box-shadow: 0 2px 3px 0 gray;
-    background-color: white;
+    box-shadow: 0 5px 5px 0 black;
 }
 
 .movieInformation {
     color: white; /* 텍스트를 흰색으로 설정 */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7); /* 텍스트 그림자 */
-    background-color: rgba(0, 0, 0, 0.5); /* 텍스트 배경 투명도 */
+    background-color: rgba(0, 0, 0, 0.8); /* 텍스트 배경 투명도 */
     padding: 20px; /* 텍스트 배경의 여백 */
     border-radius: 10px; /* 텍스트 배경의 모서리 둥글게 */
 }
@@ -87,10 +106,4 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.movieTitle {
-    font-size: 30px;
-    margin: 0;
-    font-weight: 100;
-  }
 /* 유명한 영화 목록 */

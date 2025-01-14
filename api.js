@@ -1,12 +1,48 @@
 // Now Playing API
 
-// fetch(
-//   "https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1",
-//   options
-// )
-//   .then((resNowPlaying) => resNowPlaying.json())
-//   .then((resNowPlaying) => console.log(resNowPlaying))
-//   .catch((errNow) => console.error(errNow));
+function fetchNowPlayingMovie() {
+  fetch(
+    "https://api.themoviedb.org/3/movie/now_playing?language=ko-KR&page=1",
+    options
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      searchData = data.results;
+      displayNowPlayingMovies(data.results);
+    })
+    .catch((err) => console.error("fetching Nowplaying Movie : ", err));
+}
+
+// fetch 된 정보를 카드UI로 만들어 display 하는 부분
+function displayNowPlayingMovies(movies) {
+  // 무비컨테이너 한번 비워줘야함 //
+  nowPlayingContainer.innerHTML = "";
+  const maxMovies = Math.min(movies.length, 5);
+  for (let i = 0; i < maxMovies; i++) {
+    const { id, poster_path, title } = movies[i];
+
+    // 새로운 카드 요소 생성
+    const nowPlayingCard = document.createElement("div");
+    nowPlayingCard.classList.add("movieCard");
+    nowPlayingCard.id = `movie${id}`;
+    nowPlayingCard.style.backgroundSize = "cover";
+
+    // 포스터 이미지 생성
+    const img = document.createElement("img");
+    img.classList.add("moviePoster");
+    img.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
+    img.alt = `${title} 상영포스터`;
+
+    // 포스터, 제목, 평점을 카드에 추가
+    nowPlayingCard.appendChild(img);
+
+    // 카드를 컨테이너에 추가
+    nowPlayingContainer.appendChild(nowPlayingCard);
+  }
+}
+
+// fetchMovie를 실행
+fetchNowPlayingMovie();
 
 // -----------------------------------------------------------------------
 
@@ -29,12 +65,13 @@ function displayMovies(movies) {
   // 무비컨테이너 한번 비워줘야함 //
   movieContainer.innerHTML = "";
   for (let i = 0; i < movies.length; i++) {
-    const { id, poster_path, title, vote_average, vote_count } = movies[i];
+    const { id, poster_path, title } = movies[i];
 
     // 새로운 카드 요소 생성
     const card = document.createElement("div");
     card.classList.add("movieCard");
     card.id = `movie${id}`;
+    card.style.backgroundSize = "cover";
 
     // 포스터 이미지 생성
     const img = document.createElement("img");
@@ -42,21 +79,8 @@ function displayMovies(movies) {
     img.src = `https://image.tmdb.org/t/p/w500${poster_path}`;
     img.alt = `${title} 유명포스터`;
 
-    // 제목 생성
-    const titleElement = document.createElement("p");
-    titleElement.classList.add("movieTitle");
-    titleElement.textContent = title;
-
-    // 평점 생성, 소숫점 1자리로 반올림
-    let voteAverage = Math.round(vote_average * 10) / 10;
-    const voteElement = document.createElement("p");
-    voteElement.classList.add("movieVotes");
-    voteElement.textContent = `⭐ ${voteAverage} (${vote_count})`;
-
     // 포스터, 제목, 평점을 카드에 추가
     card.appendChild(img);
-    card.appendChild(titleElement);
-    card.appendChild(voteElement);
 
     // 카드를 컨테이너에 추가
     movieContainer.appendChild(card);
@@ -139,6 +163,7 @@ function updateModal(movie) {
 
   // 가져온 내용을 HTML로 전송하여 모달 생성
   const modal = document.querySelector(".modal");
+  let voteAverage = Math.round(vote_average * 10) / 10;
 
   modalBody.style.backgroundImage = `url(https://image.tmdb.org/t/p/w1280${backdrop_path})`;
   modalBody.style.backgroundSize = "cover";
@@ -149,8 +174,8 @@ function updateModal(movie) {
     <h2>${title}</h2>
     <p><strong>원제 : </strong> ${original_title} (${original_language})</p>
     <p><strong>개봉일 : </strong> ${release_date}</p>
-    <p><strong>평점 : </strong> ⭐ ${vote_average} (${vote_count}명)</p>
-    <p><strong>줄거리 : </strong> ${overview}</p>
+    <p><strong>평점 : </strong> ⭐ ${voteAverage} (${vote_count}명)</p>
+    <p><strong>줄거리 : <br></strong> ${overview}</p>
     <p><strong>장르 : </strong> ${genres
       .map((genre) => genre.name)
       .join(", ")}</p>
@@ -162,4 +187,11 @@ function updateModal(movie) {
 // 닫기 버튼을 누르면 모달 끄게 설정
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
+});
+
+// 모달 밖을 누르면 모달 끄게 설정
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
 });
