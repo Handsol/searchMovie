@@ -1,0 +1,14 @@
+.searchContainer {
+    height: 70px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+    border-bottom: solid 1px #1D1E23;
+}
+
+.search {
+    height: 30px;
+    gap: 50px;
+}
