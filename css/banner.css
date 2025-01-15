@@ -1,59 +1,77 @@
 .banner {
-    height: 500px;
+  height: 500px;
 }
 
 .bannerMainTitle {
-    display: flex;
-    position: absolute; /* 자식 요소 */
-    z-index : 3; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
+  display: flex;
+  position: absolute; /* 자식 요소 */
+  /* z-index : 3; z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
 
-    height: 70px;
-    width: 100%;
+  height: 50px;
+  width: 100%;
 
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 }
 
 .bannerContainer {
-    position: relative; /* 부모 요소 */
-    z-index : 1; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
+  position: relative; /* 부모 요소 */
+  /* z-index : 1; z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
 
-    height: 500px;
-    overflow: hidden;
-    position: relative;
-    object-fit: cover;
-    border-bottom: solid 1px #1D1E23;
-    background-color: rgba(0, 0, 0, 0.8);
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  object-fit: cover;
+  border-bottom: solid 1px #1d1e23;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .movieSlide {
-    z-index: 2;
-    height: 500px;
-    width: 100%;
+  /* z-index: 2; */
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(5px);
 }
 
 .movieSlide img {
-    position : relative;
-    z-index : 3; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
-    height: 100%;
-    object-fit: cover;
-    background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
+  height: 100%;
+  width: auto;
+  margin: auto;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.bannerCaption {
-    position: absolute; /* 자식 요소 */
-    z-index : 4;
-    
-    padding: 0;
-    margin: 0;
-    bottom: 50px;
-    margin: 0;
+.movie .bannerCaption {
+  position: absolute; /* 자식 요소 */
+  /* z-index : 4; */
 
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7)
+  padding: 0;
+  margin: 0;
+  bottom: 50px;
+  margin: 0;
+
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.banner button {
+  width: 100px;
 }
