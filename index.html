@@ -5,26 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Plus</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./css/banner.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/movieList.css" />
+    <link rel="stylesheet" href="./css/search.css" />
   </head>
   <body>
     <header class="header">
-      <h1>여기가 헤더</h1>
+      <a href="./index.html" class="headerLogo"
+        ><img src="./image/moviePlusLogo.png"
+      /></a>
       <!-- 헤더 (타이틀, 로그인) -->
     </header>
 
-    <ul class="nowPlaying">
-      <div class="nowPlayingContainer">
-        <div class="nowPlayingCard">
-          <img src="" alt="상영포스터" class="nowPlayingPoster" />
-          <!-- 현재 상영 중인 영화 애니메이션 -->
-        </div>
+    <div class="banner">
+      <h2 class="bannerMainTitle">Now Playing Movies</h2>
+      <div class="bannerContainer">
+        <!-- 현재 상영 중인 영화 -->
       </div>
-    </ul>
+      <button class="bannerLeft">왼쪽</button>
+      <button class="bannerRight">오른쪽</button>
+    </div>
 
-    <div class="search">
-      <input class="searchMovie" type="searchMovie" pattern=".*\S.*" required />
-      <button class="searchBtn" type="submit">Search</button>
-      <!-- 북마크 -->
+    <div class="searchContainer">
+      <div class="search">
+        <input class="searchMovie" pattern=".*\S.*" required />
+        <button class="searchBtn" type="submit">Search</button>
+        <!-- 북마크 -->
+      </div>
     </div>
 
     <main class="movie">
@@ -42,7 +50,17 @@
       </div>
     </div>
 
+    <footer class="footer">
+      <div class="myPages">
+        <a href="https://github.com/Handsol" title="Freepik">깃허브</a>
+        <a href="https://sol09-29.tistory.com/" title="Freepik">블로그</a>
+      </div>
+    </footer>
+
     <script src="index.js"></script>
-    <script src="api.js"></script>
+    <script src="./api/banner.api.js"></script>
+    <script src="./api/movieList.api.js"></script>
+    <script src="./api/search.api.js"></script>
+    <script src="./api/modal.api.js"></script>
   </body>
 </html>
