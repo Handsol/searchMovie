@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Plus</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./css/banner.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <link rel="stylesheet" href="./css/movieList.css" />
+    <link rel="stylesheet" href="./css/search.css" />
   </head>
   <body>
     <header class="header">
@@ -14,16 +18,21 @@
       <!-- 헤더 (타이틀, 로그인) -->
     </header>
 
-    <ul class="nowPlaying">
-      <div class="nowPlayingContainer">
-        <!-- 현재 상영 중인 영화 애니메이션 -->
+    <div class="banner">
+      <h2 class="bannerMainTitle">Now Playing Movies</h2>
+      <div class="bannerContainer">
+        <!-- 현재 상영 중인 영화 -->
       </div>
-    </ul>
+      <button class="bannerLeft">왼쪽</button>
+      <button class="bannerRight">오른쪽</button>
+    </div>
 
-    <div class="search">
-      <input class="searchMovie" type="searchMovie" pattern=".*\S.*" required />
-      <button class="searchBtn" type="submit">Search</button>
-      <!-- 북마크 -->
+    <div class="searchContainer">
+      <div class="search">
+        <input class="searchMovie" pattern=".*\S.*" required />
+        <button class="searchBtn" type="submit">Search</button>
+        <!-- 북마크 -->
+      </div>
     </div>
 
     <main class="movie">
@@ -49,6 +58,9 @@
     </footer>
 
     <script src="index.js"></script>
-    <script src="api.js"></script>
+    <script src="./api/banner.api.js"></script>
+    <script src="./api/movieList.api.js"></script>
+    <script src="./api/search.api.js"></script>
+    <script src="./api/modal.api.js"></script>
   </body>
 </html>

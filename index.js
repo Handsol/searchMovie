@@ -9,8 +9,9 @@ const options = {
 };
 
 // header, nowPlaying, search, popularMovie
-const nowPlayingContainer = document.querySelector(".nowPlayingContainer");
-const nowPlayingCard = document.querySelector(".nowPlayingCard");
+const bannerContainer = document.querySelector(".bannerContainer");
+const bannerLeftBtn = document.querySelector(".bannerLeft");
+const bannerRightBtn = document.querySelector(".bannerRight");
 const movieContainer = document.querySelector(".movieContainer");
 const movieCard = document.querySelector(".movieCard");
 const searchBtn = document.querySelector(".searchBtn");
