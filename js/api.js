@@ -30,8 +30,7 @@ movieContainer.addEventListener("click", function (event) {
 function fetchMovieInfo(movieId) {
   const detailsUrl = `https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`;
 
-  // 검색을 진행할 API json으로 정리하고 필요한 내용을
-  // 모달로 보내줄 수 있도록 콜백함수로 순서 정해주기
+  // 검색을 진행할 API json으로 정리하고 필요한 내용을 모달에 띄우기
   fetch(detailsUrl, options)
     .then((res) => res.json())
     .then((movie) => {

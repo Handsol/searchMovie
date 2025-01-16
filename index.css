@@ -16,9 +16,16 @@ body {
 
 
 .header {
+    height: 50px;
+    width: 100%;
     background-color: black;
     border-bottom: solid 1px #1D1E23;
-    height: 50px;
+
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-top: 5px;
 }
 
 .header img {
