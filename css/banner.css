@@ -112,7 +112,7 @@
 /* 이미지 위에 올라갈 영화 제목 */
 .bannerCaption {
   position: absolute; /* 자식 요소 */
-  z-index: 5;
+  z-index: 3;
 
   bottom: 10px;
   left: 40%;

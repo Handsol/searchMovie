@@ -35,11 +35,6 @@ function updateModal(movie) {
   modal.style.display = "flex"; // 모달 표시
 }
 
-// 닫기 버튼을 누르면 모달 끄게 설정
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
-});
-
 // 모달 밖을 누르면 모달 끄게 설정
 modal.addEventListener("click", (event) => {
   if (event.target === modal) {
