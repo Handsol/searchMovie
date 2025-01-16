@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Plus</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="./css/banner.css" />
-    <link rel="stylesheet" href="./css/modal.css" />
-    <link rel="stylesheet" href="./css/movieList.css" />
-    <link rel="stylesheet" href="./css/search.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/banner.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/movieList.css" />
+    <link rel="stylesheet" href="css/search.css" />
   </head>
   <body>
     <header class="header">
@@ -23,15 +23,15 @@
       <div class="bannerContainer">
         <!-- 현재 상영 중인 영화 -->
       </div>
-      <button class="bannerLeft">왼쪽</button>
-      <button class="bannerRight">오른쪽</button>
+      <button class="prevButton"><</button>
+      <button class="nextButton">></button>
     </div>
 
     <div class="searchContainer">
       <div class="search">
+        <p class="searchInfo">보고싶은 영화 검색</p>
         <input class="searchMovie" pattern=".*\S.*" required />
         <button class="searchBtn" type="submit">Search</button>
-        <!-- 북마크 -->
       </div>
     </div>
 
@@ -43,24 +43,18 @@
 
     <div class="modal">
       <div class="modalBody">
-        <button class="closeModal">닫기</button>
         <div class="movieInformation">
           <!-- 포스터를 누르면 영화 관련 상세 내용 모달 -->
         </div>
       </div>
     </div>
 
-    <footer class="footer">
-      <div class="myPages">
-        <a href="https://github.com/Handsol" title="Freepik">깃허브</a>
-        <a href="https://sol09-29.tistory.com/" title="Freepik">블로그</a>
-      </div>
-    </footer>
-
-    <script src="index.js"></script>
-    <script src="./api/banner.api.js"></script>
-    <script src="./api/movieList.api.js"></script>
-    <script src="./api/search.api.js"></script>
-    <script src="./api/modal.api.js"></script>
+    <!-- JS 파일 연결 -->
+    <script src="js/index.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/banner.js"></script>
+    <script src="js/movieList.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/modal.js"></script>
   </body>
 </html>

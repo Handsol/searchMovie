@@ -1,59 +1,124 @@
 .banner {
-    height: 500px;
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+  display: grid;
+  justify-content: space-between;
 }
 
+/* NowPlaying 이 나와있는 타이틀 스타일*/
 .bannerMainTitle {
-    display: flex;
-    position: absolute; /* 자식 요소 */
-    z-index : 3; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
+  display: flex;
+  position: absolute; /* 자식 요소 */
+  z-index: 3;
 
-    height: 70px;
-    width: 100%;
+  height: 50px;
+  width: 100%;
 
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 
-    color: white;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
 }
 
+/* 누르면 배너 슬라이드가 움직일 버튼 스타일 */
+.banner button {
+  position: absolute;
+  z-index: 5;
+
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+/* 앞으로 보내는 버튼 */
+.banner .prevButton {
+  left: 0;
+}
+
+/* 뒤로 보내는 버튼 */
+.banner .nextButton {
+  right: 0;
+}
+
+/* 버튼에 마우스를 올리면 색이 바뀌게 */
+.banner button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+}
+
+/* 배너를 통틀어 묶은 컨테이너 */
 .bannerContainer {
-    position: relative; /* 부모 요소 */
-    z-index : 1; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
+  position: relative; /* 부모 요소 */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
 
-    height: 500px;
-    overflow: hidden;
-    position: relative;
-    object-fit: cover;
-    border-bottom: solid 1px #1D1E23;
-    background-color: rgba(0, 0, 0, 0.8);
+  height: 500px;
+  border-bottom: solid 1px #1d1e23;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* frontImage, backImage가 포함된 통튼 묶음 */
 .movieSlide {
-    z-index: 2;
-    height: 500px;
-    width: 100%;
+  position: relative;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+
+  width: 100vw;
+  height: 500px;
+
+  background-size: cover;
+  background-position: center;
 }
 
-.movieSlide img {
-    position : relative;
-    z-index : 3; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
-    height: 100%;
-    object-fit: cover;
-    background-color: rgba(0, 0, 0, 0.8);
+/* 활성화된(앞에 보이는) 슬라이드 효과 */
+.movieSlide.active {
+  display: block;
+  opacity: 1;
 }
 
+/* 선명하게 보이는 작은 이미지 */
+.frontImage {
+  position: absolute;
+  z-index: 2; /* z축(앞 뒤) 순서 지정(숫자가 클수록 앞) */
+  height: 100%;
+  margin: 0 auto;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* 배경이 되는 큰 이미지 */
+.backImage {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(3px);
+}
+
+/* 이미지 위에 올라갈 영화 제목 */
 .bannerCaption {
-    position: absolute; /* 자식 요소 */
-    z-index : 4;
-    
-    padding: 0;
-    margin: 0;
-    bottom: 50px;
-    margin: 0;
+  position: absolute; /* 자식 요소 */
+  z-index: 3;
 
-    color: white;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7)
+  bottom: 10px;
+  left: 40%;
+  transform: translateX(-50%);
+
+  color: white;
+  font-size: 50px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
 }
