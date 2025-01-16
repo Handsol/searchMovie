@@ -6,7 +6,7 @@
 ---
 
 ## 📽️ **소개 영상**  
-[![Video Label](http://img.youtube.com/vi/8GBnK0S9Sdo/0.jpg)]((https://youtu.be/8GBnK0S9Sdo)
+[![MoviePlus 소개 영상](https://img.youtube.com/vi/8GBnK0S9Sdo/0.jpg)](https://youtu.be/8GBnK0S9Sdo)
 
 ---
 
