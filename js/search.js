@@ -1,12 +1,7 @@
-// 검색창에서 검색어 입력 후 엔터키를 누르면 인식하게 설정
-searchInput.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    searchBtn.click();
-  }
-});
-
+// 검색어 자체를 우선 한번 비워주기
 let searchData = [];
 
+// 검색 버튼을 누르면 입력값을 가져오게 설정
 searchBtn.addEventListener("click", function () {
   // keyword 변수를 생성하여 검색창에 입력되는 값 불러오기
   const keyword = searchInput.value.trim();
@@ -15,6 +10,13 @@ searchBtn.addEventListener("click", function () {
   if (!keyword) {
     return fetchMovie();
   }
+
+  // 엔터키를 누르면 검색 버튼을 누르는 것과 같은 역할을 하게 설정
+  searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      searchBtn.click();
+    }
+  });
 
   // 창고(searchAPI)에서 검색어를 기준으로 검색되게 내용 추가
   const searchUrl = `https://api.themoviedb.org/3/search/movie?query=${keyword}&include_adult=false&language=ko-KR&page=1`;
