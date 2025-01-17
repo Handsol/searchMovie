@@ -1,3 +1,14 @@
+// movieContainer에 이벤트 리스너를 추가하여 포스터가 눌리는지 인식
+movieContainer.addEventListener("click", function (event) {
+  const target = event.target;
+
+  // 클릭된 객체가 영화포스터인지 확인하고, 맞으면 ID를 불러와 API 호출
+  if (target.classList.contains("moviePoster")) {
+    const movieId = target.closest(".movieCard").id.replace("movie", ""); // ID에서 숫자만 추출
+    fetchMovieInfo(movieId);
+  }
+});
+
 function displayMovies(movies) {
   // 무비컨테이너 한번 비워줘야함 //
   movieContainer.innerHTML = "";

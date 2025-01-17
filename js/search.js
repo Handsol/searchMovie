@@ -1,3 +1,10 @@
+// 검색창에서 검색어 입력 후 엔터키를 누르면 인식하게 설정
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    searchBtn.click();
+  }
+});
+
 let searchData = [];
 
 searchBtn.addEventListener("click", function () {
