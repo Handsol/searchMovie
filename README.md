@@ -50,14 +50,14 @@
 ```plaintext
 MoviePlus/
 ├── index.html       # 메인 HTML 파일
-├── index.css        # 메인 스타일링 파일
-├── index.js         # 메인 JavaScript 파일
 ├── css/
+│   ├── index.css    # 메인 스타일링 파일
 │   ├── banner.css   # 배너 스타일링
 │   ├── modal.css    # 모달 스타일링
 │   ├── movieList.css # 영화 리스트 스타일링
 │   ├── search.css   # 검색 스타일링
 ├── js/
+│   ├── index.js     # 메인 JavaScript 파일
 │   ├── api.js       # API 호출 및 데이터 처리
 │   ├── banner.js    # 배너 관련 기능
 │   ├── modal.js     # 모달 관련 기능
